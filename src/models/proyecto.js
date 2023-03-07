@@ -26,7 +26,17 @@ export const proyecto = sequelize.define('proyect',{
 {
 timetamps:false
 }
+
 );
+proyect.hasMany(task,{
+    foreingKey:'proyecid',
+    sourceKey:'id'
+})
+
+task.belongsTo(proyect,{
+    foreingKey:'proyecid',
+    targetId:'id'
+})
 //controlar es las funciones q se utlizan 
 //timetamps para eliminar la fecha de creacion 
 //200 la marca es coorecta en el dhunder 

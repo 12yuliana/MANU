@@ -64,3 +64,17 @@ export const updateproyecto= async (req,res)=>{
 }
 //DataTypes   son los tipos de datos que se manejan en los campos ejemplo id: type:datatypes.INTEGRER
 //boolean falso o verdadero
+export const createtask = async (req,res) => {
+    const { name, done,proyectId} = req.body
+    try {
+        const newtask = await task.create({
+            name,
+            done,
+            proyectId
+        })
+        // res.json(newtask)
+        res.status(200).json({message: 'creacion de las tareas exitosamente',newtask})
+    } catch (error) {
+        return res.status(500).json({message:error.message})
+    }
+}
