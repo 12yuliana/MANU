@@ -7,7 +7,7 @@ async function main(){
         app.listen(3000)
         console.log("servidor en linea",3000);
     } catch (error) {
-        console.log("error al conectar la base de datos",error);
+        console.log("error al conectar la base de datos :)",error);
     }
 }
 main();
